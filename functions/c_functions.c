@@ -10,6 +10,12 @@ struct employee_t{
     bool ismanager
 };
 
+union myunion_u{
+    int x;
+    char c;
+    short s
+}
+
 int main(){
 
      struct employee_t employees[10];
@@ -21,4 +27,9 @@ int main(){
           employees.ismanager = false;
     }
         prinf("%f\n", employees[10].income)
-}
+
+        union myunion_u u;
+        u.x = 0x41424344;
+
+        prinf("%hx %hhx\n", u.s, u.c);
+    }
